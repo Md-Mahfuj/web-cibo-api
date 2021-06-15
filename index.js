@@ -3,6 +3,7 @@ require('dotenv').config();
 const  bodyParser = require('body-parser');
 const connect =require('./config/db');
 const router =require('./routes/userRoutes');
+const productRouter =require('./routes/productRoutes');
 const app =express();
 
 // connect mongodb database
@@ -10,6 +11,7 @@ connect();
 
 app.use(bodyParser.json());
 app.use('/',router);
+app.use('/',productRouter);
 
 
 
